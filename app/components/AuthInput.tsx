@@ -2,6 +2,8 @@
 import { TextInput, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
+import { COLORS } from "@/constants/colors";
+import { FONT_SIZES, FONTS } from "@/constants/typography";
 
 interface Props {
   placeholder: string;
@@ -9,6 +11,7 @@ interface Props {
   onChangeText: (text: string) => void;
   secureTextEntry?: boolean;
   isPassword?: boolean;
+  editable?: boolean;
 }
 
 export default function AuthInput({
@@ -17,6 +20,7 @@ export default function AuthInput({
   onChangeText,
   secureTextEntry = false,
   isPassword = false,
+  editable = true,
 }: Props) {
   const [hidePassword, setHidePassword] = useState(true);
 
@@ -28,17 +32,19 @@ export default function AuthInput({
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry && hidePassword}
-        placeholderTextColor="#9E9E9E"
+        placeholderTextColor={COLORS.PLACEHOLDER}
+        editable={editable}
       />
       {isPassword && (
         <TouchableOpacity
           style={styles.eyeIcon}
           onPress={() => setHidePassword(!hidePassword)}
+          disabled={!editable}
         >
           <Ionicons
             name={hidePassword ? "eye-off-outline" : "eye-outline"}
             size={22}
-            color="#607D8B"
+            color={COLORS.ICON}
           />
         </TouchableOpacity>
       )}
@@ -54,12 +60,13 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#90A4AE",
-    backgroundColor: "#FFFFFF",
+    borderColor: COLORS.INPUT_BORDER,
+    backgroundColor: COLORS.WHITE,
     paddingVertical: 14,
     paddingHorizontal: 16,
     borderRadius: 10,
-    fontSize: 16,
+    fontSize: FONT_SIZES.MEDIUM,
+    fontFamily: FONTS.PRIMARY,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.08,

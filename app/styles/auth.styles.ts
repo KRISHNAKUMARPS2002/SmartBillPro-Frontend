@@ -1,59 +1,76 @@
+// app/styles/auth.styles.ts
 import { StyleSheet } from "react-native";
+import { COLORS } from "@/constants/colors";
+import { FONTS, FONT_SIZES } from "@/constants/typography";
 
 const authStyles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.BACKGROUND,
+    alignItems: "center",
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#E8EAF6", // Light Indigo Background
-    padding: 20,
+    padding: 24,
   },
-  card: {
-    backgroundColor: "#fff",
-    padding: 30,
-    borderRadius: 16,
-    width: "100%",
-    maxWidth: 350,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 6,
-    elevation: 8,
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 16,
+    resizeMode: "contain",
   },
   title: {
-    fontSize: 26,
-    fontWeight: "700",
-    color: "#1A237E", // Indigo
-    marginBottom: 30,
+    fontSize: FONT_SIZES.TITLE,
+    fontFamily: FONTS.HEADER,
+    color: COLORS.PRIMARY_DARK,
     textAlign: "center",
+    marginBottom: 4,
+  },
+  subtitle: {
+    fontSize: FONT_SIZES.MEDIUM,
+    fontFamily: FONTS.PRIMARY,
+    color: COLORS.LIGHT,
+    textAlign: "center",
+    marginBottom: 24,
+  },
+  card: {
+    backgroundColor: COLORS.WHITE,
+    padding: 24,
+    borderRadius: 16,
+    width: "100%",
+    maxWidth: 400,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 5,
   },
   button: {
     width: "100%",
     paddingVertical: 14,
-    borderRadius: 10,
-    marginBottom: 16,
+    borderRadius: 12,
     alignItems: "center",
+    marginTop: 16,
   },
   loginButton: {
-    backgroundColor: "#1A237E", // Indigo
+    backgroundColor: COLORS.PRIMARY,
   },
   registerButton: {
-    backgroundColor: "#64B5F6", // Light Blue
+    backgroundColor: COLORS.PURPLE,
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "500",
+    color: COLORS.WHITE,
+    fontSize: FONT_SIZES.LARGE,
+    fontFamily: FONTS.PRIMARY,
   },
   linkText: {
     marginTop: 16,
-    fontSize: 16,
-    color: "#1A237E",
+    fontSize: FONT_SIZES.MEDIUM,
+    fontFamily: FONTS.PRIMARY,
+    color: COLORS.LIGHT,
     textAlign: "center",
+  },
+  linkHighlight: {
+    color: COLORS.PRIMARY,
+    fontWeight: "bold",
   },
 });
 
