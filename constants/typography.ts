@@ -1,7 +1,9 @@
 // src/constants/typography.js
 export const FONTS = {
-  PRIMARY: "Inter",
-  HEADER: "Poppins",
+  PRIMARY: "Inter-Regular",
+  PRIMARY_BOLD: "Inter-Bold",
+  HEADER: "Poppins-Regular",
+  HEADER_BOLD: "Poppins-Bold",
   DATA: "Roboto",
 };
 

@@ -1,0 +1,107 @@
+import { StyleSheet } from "react-native";
+import { COLORS } from "@/constants/colors";
+import { FONTS, FONT_SIZES } from "@/constants/typography";
+
+const addStyles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    backgroundColor: COLORS.BACKGROUND,
+    padding: 20,
+  },
+  card: {
+    backgroundColor: COLORS.WHITE,
+    borderRadius: 16,
+    padding: 20,
+    marginTop: 20,
+    shadowColor: COLORS.DARK,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 5,
+  },
+  label: {
+    fontSize: FONT_SIZES.LARGE,
+    fontFamily: FONTS.PRIMARY_BOLD,
+    color: COLORS.DARK,
+    marginTop: 16,
+    marginBottom: 6,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: COLORS.INPUT_BORDER,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    fontSize: FONT_SIZES.MEDIUM,
+    fontFamily: FONTS.PRIMARY,
+    backgroundColor: COLORS.WHITE,
+    color: COLORS.DARK,
+  },
+  stockContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 16,
+  },
+  imageText: {
+    textAlign: "center",
+    fontSize: FONT_SIZES.MEDIUM,
+    fontFamily: FONTS.HEADER_BOLD,
+    color: COLORS.PRIMARY_DARK,
+    marginVertical: 16,
+  },
+  imageDropArea: {
+    borderStyle: "dashed",
+    borderColor: COLORS.PRIMARY,
+    borderWidth: 2,
+    borderRadius: 14,
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 10,
+    backgroundColor: COLORS.PRIMARY_LIGHT,
+  },
+  previewImage: {
+    width: "100%",
+    height: 200,
+    borderRadius: 12,
+    resizeMode: "cover",
+    marginVertical: 10,
+  },
+  cancelIcon: {
+    position: "absolute",
+    top: -10,
+    right: -10,
+    backgroundColor: COLORS.ERROR,
+    borderRadius: 15,
+    width: 30,
+    height: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1,
+  },
+  cancelText: {
+    color: COLORS.WHITE,
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  button: {
+    backgroundColor: COLORS.PRIMARY,
+    paddingVertical: 16,
+    borderRadius: 14,
+    alignItems: "center",
+    marginTop: 20,
+    shadowColor: COLORS.PRIMARY_DARK,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  buttonText: {
+    color: COLORS.WHITE,
+    fontSize: FONT_SIZES.LARGE,
+    fontFamily: FONTS.PRIMARY_BOLD,
+  },
+});
+
+export default addStyles;

@@ -47,7 +47,7 @@ export default function Dashboard() {
         style: "destructive",
         onPress: async () => {
           await logout();
-          router.replace("/login");
+          router.replace("/register");
         },
       },
     ]);
@@ -63,7 +63,13 @@ export default function Dashboard() {
           text="Add Item"
           color={COLORS.PRIMARY}
           icon={<MaterialIcons name="add-box" size={28} color="white" />}
-          onPress={() => router.push("/add-item")}
+          onPress={() => router.push("/additem")}
+        />
+        <DashboardButton
+          text="View Items"
+          color={COLORS.GOLD}
+          icon={<MaterialIcons name="inventory-2" size={28} color="white" />}
+          onPress={() => router.push("/view-item")}
         />
         <DashboardButton
           text="Start Billing"
@@ -76,12 +82,6 @@ export default function Dashboard() {
           color={COLORS.TEAL}
           icon={<FontAwesome5 name="chart-bar" size={26} color="white" />}
           onPress={() => router.push("/reports")}
-        />
-        <DashboardButton
-          text="Settings"
-          color={COLORS.GOLD}
-          icon={<Entypo name="cog" size={28} color="white" />}
-          onPress={() => router.push("/settings")}
         />
       </View>
 
@@ -109,6 +109,7 @@ function DashboardButton({
 }) {
   return (
     <TouchableOpacity
+      activeOpacity={0.85}
       onPress={onPress}
       style={[dashboardStyles.card, { backgroundColor: color }]}
     >
